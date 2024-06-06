@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  db:
+    image: mysql/mysql-server:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678
+      MYSQL_DATABASE: mydbapp
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 12345678
+    ports:
+      - "3306:3306"
+
+  backend:
+    build: .
+    command: ["go", "run", "main.go"]
+    volumes:
+      - .:/go/src/myapp
+    ports:
+      - "8083:8080"
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "8084:8080"
