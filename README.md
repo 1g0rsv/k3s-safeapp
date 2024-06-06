@@ -34,25 +34,28 @@ The project is structured into three main components:
 
 Build and push the Docker images for the frontend and backend components:
 
-```sh
+
 # Build the frontend image
+```sh
 cd frontend
 docker build -t <your-dockerhub-username>/mysafeapp-frontend:v1.0.0 .
 docker push <your-dockerhub-username>/mysafeapp-frontend:v1.0.0
-
+```
 # Build the backend image
+```sh
 cd ../backend
 docker build -t <your-dockerhub-username>/mysafeapp-backend:v1.0.0 .
 docker push <your-dockerhub-username>/mysafeapp-backend:v1.0.0
-
+```
 
 ### Deploying to k3s
 Apply the Kubernetes manifests to deploy the application to your k3s cluster:
 
-sh
+```sh
 kubectl apply -f k8s/mysql-deployment.yaml
 kubectl apply -f k8s/backend-deployment.yaml
 kubectl apply -f k8s/frontend-deployment.yaml
+```
 ### Configuring ArgoCD
 Use ArgoCD to manage and deploy the application:
 
