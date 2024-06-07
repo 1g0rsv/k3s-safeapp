@@ -11,7 +11,7 @@ spec:
   source:
     path: k3s
     repoURL: 'https://github.com/1g0rsv/k3s-safeapp.git'
-    targetRevision: HEAD
+    targetRevision: main
   project: default
   syncPolicy:
     automated:
