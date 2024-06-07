@@ -1,7 +1,7 @@
 <template>
   <div>
     <input v-model="text" placeholder="Enter text" />
-    <button @click="addRecord">Add</button>
+    <button @click="addRecord">Add record</button>
     <ul>
       <li v-for="record in records" :key="record.id">{{ record.text }}</li>
     </ul>
