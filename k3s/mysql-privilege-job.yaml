@@ -11,5 +11,6 @@ spec:
         env:
         - name: MYSQL_ROOT_PASSWORD
           value: "12345678"
-        command: ["sh", "-c", "mysql -h mysql -uroot -p$MYSQL_ROOT_PASSWORD -e \"GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '12345678'; FLUSH PRIVILEGES;\""]
+        command: ["sh", "-c", "mysql -h mysql -uroot -p$MYSQL_ROOT_PASSWORD -e \"GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '$MYSQL_ROOT_PASSWORD'; FLUSH PRIVILEGES;\""]
       restartPolicy: Never
+  backoffLimit: 4
