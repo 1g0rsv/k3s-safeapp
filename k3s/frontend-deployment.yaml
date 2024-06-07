@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: igorsky888/mysafeapp:frontend-v1.0.5
+        image: igorsky888/mysafeapp:frontend-v1.0.6
         ports:
         - containerPort: 8080
 ---
